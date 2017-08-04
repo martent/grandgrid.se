@@ -20,16 +20,3 @@ server {
       return 301 https://$host$request_uri;
   }
 }
-
-server {
-  server_name grandgrid.se www.grandgrid.se grandgrid.com www.grandgrid.com;
-  listen 443 ssl;
-  root /home/app_runner/webapps/grandgrid.se;
-
-  # ssl_certificate /etc/ssl/certs/ssl-cert-snakeoil.crt;
-  # ssl_certificate_key /etc/ssl/private/ssl-cert-snakeoil.key;
-  ssl_certificate /etc/letsencrypt/live/grandgrid.se/fullchain.pem; # managed by Certbot
-  ssl_certificate_key /etc/letsencrypt/live/grandgrid.se/privkey.pem; # managed by Certbot
-
-  add_header X-UA-Compatible "IE=Edge";
-}
